@@ -1,10 +1,6 @@
-﻿<div align="center">
+﻿<p align="center"><strong>OpenWrt / iStoreOS · Mihomo 管理套件</strong></p>
 
-**OpenWrt / iStoreOS · Mihomo 管理套件**
-
-</div>
-
-<div align="center">
+<p align="center">
 
 <img width="800" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/profile-details.svg?v=20261120" alt="组织概览">
 
@@ -16,10 +12,10 @@
 
 <img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/productive-time.svg?v=20261120" alt="提交时段 · UTC+8">
 
-</div>
+</p>
 
-<div align="center">
+<p align="center">
 
-**[OpenWrt-MTUN-XD](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD)** · 套件本体&nbsp;&nbsp;&nbsp;**[genkit](https://github.com/OpenWrt-MTUN-XD/genkit)** · 配置工具滚动发布包
+<strong><a href="https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD">OpenWrt-MTUN-XD</a></strong> · 套件本体&nbsp;&nbsp;&nbsp;<strong><a href="https://github.com/OpenWrt-MTUN-XD/genkit">genkit</a></strong> · 配置工具滚动发布包
 
-</div>
+</p>
