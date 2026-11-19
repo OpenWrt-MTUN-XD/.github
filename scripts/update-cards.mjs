@@ -60,6 +60,13 @@ async function grab(name) {
   for (const [from, to] of REPLACEMENTS) svg = svg.replace(from, to);
   for (const [from, to] of FONT_FIXES) svg = svg.split(from).join(to);
 
+  // 组织主页上不挂外链：profile-details 里那行「网站」整行去掉（图标 + 文本）。
+  // 上游接口有缓存，组织资料里清空 blog 后它还会带一段时间，本地直接删干净。
+  if (name === 'profile-details') {
+    svg = svg.replace(/<g class="gpsc-item" style="--gpsc-i: 2;"><g transform="translate\(0,56\)"[\s\S]*?<\/g><\/g>/, '');
+    svg = svg.replace(/<text[^>]*>https?:\/\/[^<]*<\/text>/, '');
+  }
+
   // 接口哪天改了措辞，这里会提前发现（不至于悄悄退回英文）。
   const leftover = svg.match(/>[^<>]*(Total |Public Repos|Top Languages|Created on GitHub|repos created over time)[^<>]*</);
   if (leftover) console.warn(`⚠️ ${name}: 还有没翻到的英文 → ${leftover[0]}`);
