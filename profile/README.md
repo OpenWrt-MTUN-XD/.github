@@ -1,7 +1,5 @@
 ﻿<div align="center">
 
-<h2>墨枢云境</h2>
-
 **OpenWrt / iStoreOS · Mihomo 管理套件**
 
 </div>
