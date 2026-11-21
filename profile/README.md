@@ -1,47 +1,46 @@
 <p align="center">
-  <strong>English</strong> | <a href="README.zh-CN.md">简体中文</a>
+  <strong>简体中文</strong> | <a href="README.en.md">English</a>
 </p>
 
 <p align="center">
 
-<img width="800" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/profile-details.svg?v=20261122" alt="Organization overview">
+<img width="800" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/profile-details.svg?v=20261122" alt="组织概览">
 
-<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/repos-per-language.svg?v=20261122" alt="Languages by repository">
+<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/repos-per-language.svg?v=20261122" alt="语言分布 · 按仓库">
 
-<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/most-commit-language.svg?v=20261122" alt="Languages by commit">
+<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/most-commit-language.svg?v=20261122" alt="语言分布 · 按提交">
 
-<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/stats.svg?v=20261122" alt="Overview statistics">
+<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/stats.svg?v=20261122" alt="数据总览">
 
-<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/productive-time.svg?v=20261122" alt="Productive time · UTC+8">
+<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/productive-time.svg?v=20261122" alt="提交时段 · UTC+8">
 
 </p>
 
 
-## MTUN-XD
+## MTUN-XD（墨枢云境）
 
-**A Mihomo management suite for OpenWrt / iStoreOS — stable by design.**
+**OpenWrt / iStoreOS 的 Mihomo 管理套件 —— 稳定优先。**
 
-MTUN-XD bundles the Mihomo core, the MetaCubeXD dashboard, a browser-based config
-generator and maintenance tooling into a single LuCI entry (**Services → MTUN-XD**).
-One command to install; component updates do not drop the network.
+套件把 Mihomo 核心、MetaCubeXD 面板、浏览器端配置生成器与维护工具，收进 LuCI 的
+**「服务 → MTUN-XD」** 统一入口。一条命令装好；组件升级不断网。
 
-- **Auditable config** — deterministic key order, diff-friendly output.
-- **Clear boundaries** — no automatic core restarts or file deletions.
-- **Verifiable quality** — 176 self-checks and Golden baselines.
+- **配置可审计**：固定键序，输出可 Diff。
+- **边界清晰**：不自动重启内核、不自动删文件。
+- **质量可验证**：176 项自检与 Golden 基线。
 
-### Repositories
+### 仓库
 
-| Repository | What it is |
+| 仓库 | 说明 |
 | --- | --- |
-| [genkit](https://github.com/OpenWrt-MTUN-XD/genkit) | Rolling release kit for the config tool (runtime component) |
-| [.github](https://github.com/OpenWrt-MTUN-XD/.github) | Organization profile and assets |
-| [Sbox-XD](https://github.com/OpenWrt-MTUN-XD/Sbox-XD) | A separate project: modern sing-box GUI client |
-| [OpenWrt-MTUN-XD](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD) | The suite: installer, LuCI app, config generator |
+| [genkit](https://github.com/OpenWrt-MTUN-XD/genkit) | 配置工具的滚动发布包（运行时组件） |
+| [.github](https://github.com/OpenWrt-MTUN-XD/.github) | 组织主页与素材 |
+| [Sbox-XD](https://github.com/OpenWrt-MTUN-XD/Sbox-XD) | 独立项目：sing-box 现代化 GUI 客户端 |
+| [OpenWrt-MTUN-XD](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD) | 套件本体：安装脚本、LuCI 应用、配置生成器 |
 
-### Links
+### 链接
 
-[Releases](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD/releases) ·
-[Telegram](https://t.me/+Kdxyw8yLTz85ODg5) ·
-[Contributing](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD/blob/main/CONTRIBUTING.md) ·
-[Security](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD/blob/main/SECURITY.md) ·
-[Trademark](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD/blob/main/TRADEMARK.md)
+[版本发布](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD/releases) ·
+[Telegram 群组](https://t.me/+Kdxyw8yLTz85ODg5) ·
+[参与开发](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD/blob/main/CONTRIBUTING.md) ·
+[安全报告](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD/blob/main/SECURITY.md) ·
+[品牌与商标](https://github.com/OpenWrt-MTUN-XD/OpenWrt-MTUN-XD/blob/main/TRADEMARK.md)
