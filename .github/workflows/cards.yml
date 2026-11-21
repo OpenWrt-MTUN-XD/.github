@@ -29,7 +29,11 @@ jobs:
           git add profile/cards profile/cards-en
           if git diff --cached --quiet; then
             echo "no changes"
-          else
-            git commit -m "chore: refresh profile cards"
-            git push
+            exit 0
           fi
+          git commit -m "chore: refresh profile cards"
+          # 期间可能有别的提交落到 main，先变基再推，最多重试 3 次
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            sleep 3
+          done
