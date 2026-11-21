@@ -16,6 +16,7 @@ import { fileURLToPath } from 'node:url';
 const USER = 'OpenWrt-MTUN-XD';
 const BASE = 'https://github-profile-summary-cards.vercel.app/api/cards';
 const OUT_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'profile', 'cards');
+const OUT_DIR_EN = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'profile', 'cards-en');
 
 // 组织卡片没有 productive-time（那是按人统计的），所以四张。
 const CARDS = ['profile-details', 'repos-per-language', 'most-commit-language', 'stats'];
@@ -50,15 +51,17 @@ const FONT_FIXES = [
   ]
 ];
 
-async function grab(name) {
+async function grab(name, lang = 'zh') {
   const url = `${BASE}/${name}?username=${USER}&theme=github_dark&animation=load&border_color=0d1116`;
   const res = await fetch(url, { headers: { 'user-agent': 'OpenWrt-MTUN-XD-profile-cards' } });
   if (!res.ok) throw new Error(`${name}: HTTP ${res.status}`);
   let svg = await res.text();
   if (!svg.startsWith('<svg') && !svg.includes('<svg')) throw new Error(`${name}: 不是 SVG`);
 
-  for (const [from, to] of REPLACEMENTS) svg = svg.replace(from, to);
-  for (const [from, to] of FONT_FIXES) svg = svg.split(from).join(to);
+  if (lang === 'zh') {
+    for (const [from, to] of REPLACEMENTS) svg = svg.replace(from, to);
+    for (const [from, to] of FONT_FIXES) svg = svg.split(from).join(to);
+  }
 
   // 组织主页上不挂外链：profile-details 里那行「网站」整行去掉（图标 + 文本）。
   // 上游接口有缓存，组织资料里清空 blog 后它还会带一段时间，本地直接删干净。
@@ -68,8 +71,10 @@ async function grab(name) {
   }
 
   // 接口哪天改了措辞，这里会提前发现（不至于悄悄退回英文）。
-  const leftover = svg.match(/>[^<>]*(Total |Public Repos|Top Languages|Created on GitHub|repos created over time)[^<>]*</);
-  if (leftover) console.warn(`⚠️ ${name}: 还有没翻到的英文 → ${leftover[0]}`);
+  if (lang === 'zh') {
+    const leftover = svg.match(/>[^<>]*(Total |Public Repos|Top Languages|Created on GitHub|repos created over time)[^<>]*</);
+    if (leftover) console.warn(`⚠️ ${name}: 还有没翻到的英文 → ${leftover[0]}`);
+  }
   return svg;
 }
 
@@ -105,7 +110,7 @@ async function commitsByHour() {
   return counts;
 }
 
-function productiveTimeSvg(counts) {
+function productiveTimeSvg(counts, lang = 'zh') {
   const left = 35;
   const top = 60;
   const w = 280;
@@ -142,7 +147,7 @@ rect.bar{animation:gpsc-grow 1.5s cubic-bezier(.2,.7,.3,1) both 0.35s;transform-
 </style>
 <g>
 <rect x="1" y="1" rx="5" ry="5" height="99%" width="99.41%" stroke="#0d1116" stroke-width="1" fill="#0d1117"/>
-<text x="30" y="40" class="gpsc-item" style="--gpsc-i: 0; font-size: 22px; fill: #0366d6;">提交时段（UTC+8）</text>
+<text x="30" y="40" class="gpsc-item" style="--gpsc-i: 0; font-size: 22px; fill: #0366d6;">${lang === 'zh' ? '提交时段（UTC+8）' : 'Productive time (UTC+8)'}</text>
 <line x1="${left}" y1="${top + h + 0.5}" x2="${left + w}" y2="${top + h + 0.5}" stroke="#77909c"/>
 ${ticks}
 ${bars}
@@ -153,12 +158,14 @@ ${hourLabels}
 }
 
 await mkdir(OUT_DIR, { recursive: true });
+await mkdir(OUT_DIR_EN, { recursive: true });
 for (const name of CARDS) {
-  const svg = await grab(name);
-  await writeFile(resolve(OUT_DIR, `${name}.svg`), svg, 'utf8');
-  console.log(`✔ ${name}.svg`);
+  await writeFile(resolve(OUT_DIR, `${name}.svg`), await grab(name, 'zh'), 'utf8');
+  await writeFile(resolve(OUT_DIR_EN, `${name}.svg`), await grab(name, 'en'), 'utf8');
+  console.log(`✔ ${name}.svg (zh + en)`);
 }
 
 const hours = await commitsByHour();
-await writeFile(resolve(OUT_DIR, 'productive-time.svg'), productiveTimeSvg(hours), 'utf8');
+await writeFile(resolve(OUT_DIR, 'productive-time.svg'), productiveTimeSvg(hours, 'zh'), 'utf8');
+await writeFile(resolve(OUT_DIR_EN, 'productive-time.svg'), productiveTimeSvg(hours, 'en'), 'utf8');
 console.log(`✔ productive-time.svg（${hours.reduce((a, b) => a + b, 0)} 次提交）`);
