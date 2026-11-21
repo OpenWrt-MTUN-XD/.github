@@ -4,15 +4,15 @@
 
 <p align="center">
 
-<img width="800" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/profile-details.svg?v=20261122" alt="Organization overview">
+<img width="800" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards-en/profile-details.svg?v=20261123" alt="Organization overview">
 
-<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/repos-per-language.svg?v=20261122" alt="Languages by repository">
+<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards-en/repos-per-language.svg?v=20261123" alt="Languages by repository">
 
-<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/most-commit-language.svg?v=20261122" alt="Languages by commit">
+<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards-en/most-commit-language.svg?v=20261123" alt="Languages by commit">
 
-<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/stats.svg?v=20261122" alt="Overview statistics">
+<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards-en/stats.svg?v=20261123" alt="Overview statistics">
 
-<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards/productive-time.svg?v=20261122" alt="Productive time · UTC+8">
+<img width="398" src="https://raw.githubusercontent.com/OpenWrt-MTUN-XD/.github/main/profile/cards-en/productive-time.svg?v=20261123" alt="Productive time · UTC+8">
 
 </p>
 
